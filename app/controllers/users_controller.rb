@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 
     artist_list = {}
     # binding.pry
-    data["topartists"]["artist"][0..9].each do |object|
+    data["topartists"]["artist"][0..20].each do |object|
       artist_name = object["name"]
       url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
       data_echonest = HTTParty.get(url_encoded)
@@ -84,7 +84,9 @@ class UsersController < ApplicationController
 
     artist_list = {}
     # binding.pry
-    data[0..9].each do |artist_name|
+    data[0..9].each do |artist_name| #TO CAP API CALLS
+    # data.each do |artist_name|
+
       url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
       data_echonest = HTTParty.get(url_encoded)
         if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))
