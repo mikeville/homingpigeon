@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bandwag</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <div class="row header_master">
+    <h1>Homing Pigeon</h1>
+  </div>
+  <div class="row header_sections">
+    <div id="header_facebook" class="col-md-4 header">
+      <img src="/logo_fb.jpg" id="logo_fb" class="logo"/>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path %>
+        <% else %>
+        <%= link_to "Plug in your Facebook likes", user_omniauth_authorize_path(:facebook) %>
+        <% end %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>      
+    </div>
+    <div id="header_lastfm" class="col-md-4 header">  
+      <img src="/logo_lastfm.png" id="logo_lastfm" class="logo"/>
+      <form action="/users/last_fm" method="post">
+        <input type="text" name="username" placeholder="Add your Last.fm username"/> 
+        <input type="submit" name="button" value="wag">
+      </form>
+    </div>
+    <div id="header_rdio" class="col-md-4 header">  
+      <img src="/logo_rdio.jpg" id="logo_rdio" class="logo"/>
+      <p>Plug in your Rdio account</p>
+    </div>
+  </div>
+  <div class="row main">
+    <%= yield %>
+  </div>
+</body>
+</html>

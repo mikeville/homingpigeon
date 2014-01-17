@@ -1,0 +1,40 @@
+/*#section_facebook {
+  background-color: red;
+}*/
+
+#section_lastfm {
+  /*background-color: blue;*/
+}
+
+#section_rdio {
+  /*background-color: green;*/
+}
+
+.body {
+  /*background-color: yellow;*/
+}
+
+.header {
+  height: 80px;
+}
+
+
+.profile_container {
+  margin-bottom: 10px;
+}
+
+.profile_image {
+  width: auto;
+  padding: 0px;
+}
+
+
+.h3 {
+  font-size: 16px;
+  margin-top: 0px;
+  line-height: 1.;
+}
+
+.logo {
+  width:50px;
+}

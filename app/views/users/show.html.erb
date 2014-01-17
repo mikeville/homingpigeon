@@ -1,0 +1,15 @@
+<h2>Last.fm user <%= @user.username_lastfm %>'s Top Artists on Twitter:</h2>
+<!-- Entry.where(:user_id => 9).map{|e| e.artist.twitter_handle}
+ -->
+
+<table>
+  <% @listhash.each do |name, handle| %>
+      <tr>
+        <td class="artist_name"><%= name %></td>
+        <% if handle %>
+          <td class="artist_handle"><%= handle %></td>
+        <% else %>
+          <td class="artist_handle empty">(None)</td>
+        <% end %>
+  <% end %>
+</table>
