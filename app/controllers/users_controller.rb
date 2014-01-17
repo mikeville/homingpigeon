@@ -4,23 +4,23 @@ class UsersController < ApplicationController
   end
 
   def new
-    user = User.find_by_fb_nickname("dealville")
-    data = user.get_fb
+    # user = User.find_by_fb_nickname("dealville")
+    # data = user.get_fb
 
-    artist_list = {}
-    # binding.pry
-    data.each do |artist_name|
-      url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
-      data_echonest = HTTParty.get(url_encoded)
-        if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))
-          twitter_name = data_echonest["response"]["artist"]["twitter"]
-          else
-            twitter_name = ""
-        end
-      artist_list[artist_name.to_sym] = [twitter_name]
-    end
-    # binding.pry
-    @fb_list = artist_list
+    # artist_list = {}
+    # # binding.pry
+    # data.each do |artist_name|
+    #   url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
+    #   data_echonest = HTTParty.get(url_encoded)
+    #     if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))
+    #       twitter_name = data_echonest["response"]["artist"]["twitter"]
+    #       else
+    #         twitter_name = ""
+    #     end
+    #   artist_list[artist_name.to_sym] = [twitter_name]
+    # end
+    # # binding.pry
+    # @fb_list = artist_list
 
 
   end
@@ -82,20 +82,20 @@ class UsersController < ApplicationController
     user = User.find_by_fb_nickname("dealville")
     data = user.get_fb
 
-    artist_list = {}
-    # binding.pry
-    data[0..9].each do |artist_name|
-      url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
-      data_echonest = HTTParty.get(url_encoded)
-        if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))
-          twitter_name = data_echonest["response"]["artist"]["twitter"]
-          else
-            twitter_name = ""
-        end
-      artist_list[artist_name.to_sym] = [twitter_name]
-    end
-    # binding.pry
-    @fb_list = artist_list
+    # artist_list = {}
+    # # binding.pry
+    # data[0..9].each do |artist_name|
+    #   url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
+    #   data_echonest = HTTParty.get(url_encoded)
+    #     if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))
+    #       twitter_name = data_echonest["response"]["artist"]["twitter"]
+    #       else
+    #         twitter_name = ""
+    #     end
+    #   artist_list[artist_name.to_sym] = [twitter_name]
+    # end
+    # # binding.pry
+    # @fb_list = artist_list
 
 
   end

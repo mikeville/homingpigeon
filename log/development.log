@@ -16227,3 +16227,28 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-17 01:30:50 -0500
 Served asset /application.js - 304 Not Modified (0ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20140113221257)
+Migrating to CreateArtists (20140113221338)
+Migrating to CreateLists (20140113224308)
+Migrating to CreateEntries (20140114211235)
+Migrating to RemoveUserAndArtistAndLastfmTopFromLists (20140114213813)
+Migrating to ChangeRankColumnNameInEntries (20140114214355)
+Migrating to ChangeLastfmUsernameNameInUsers (20140114222949)
+Migrating to AddIdEchnoestToArtists (20140115001304)
+Migrating to DropUsersTable (20140116172634)
+Migrating to AddUsersTable (20140116184043)
+Migrating to AddDeviseToUsers (20140116184202)
+Migrating to AddProvidersColumnToUsers (20140116185140)
+Migrating to AddFbTokenColumnAndFbNicknameColumnToUsers (20140117003538)
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
