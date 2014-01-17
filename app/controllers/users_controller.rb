@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 
     artist_list = {}
     # binding.pry
-    data.each do |artist_name|
+    data[0..9].each do |artist_name|
       url_encoded = URI.encode("http://developer.echonest.com/api/v4/artist/twitter?api_key=WUYSVVEOELXPZXCN8&name=#{artist_name}")
       data_echonest = HTTParty.get(url_encoded)
         if ((data_echonest["response"]) && (data_echonest["response"]["artist"]) && (data_echonest["response"]["artist"]["twitter"]))

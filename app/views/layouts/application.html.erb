@@ -5,20 +5,24 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="container">
   <div class="row header_master">
+    <img src="/logo.png" id="pigeon"/>
     <h1>Homing Pigeon</h1>
+    <h2>Reveal your favorite musicians on Twitter</h2>
   </div>
   <div class="row header_sections">
     <div id="header_facebook" class="col-md-4 header">
       <img src="/logo_fb.jpg" id="logo_fb" class="logo"/>
-      <% if user_signed_in? %>
+      <p><% if user_signed_in? %>
         <%= link_to "Sign Out", destroy_user_session_path %>
         <% else %>
         <%= link_to "Plug in your Facebook likes", user_omniauth_authorize_path(:facebook) %>
         <% end %>
+      </p>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>      
     </div>
@@ -31,7 +35,7 @@
     </div>
     <div id="header_rdio" class="col-md-4 header">  
       <img src="/logo_rdio.jpg" id="logo_rdio" class="logo"/>
-      <p>Plug in your Rdio account</p>
+      <p><a href="https://www.rdio.com/account/signup/">Plug in your Rdio account</a></p>
     </div>
   </div>
   <div class="row main">
