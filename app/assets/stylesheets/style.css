@@ -21,7 +21,7 @@
 
 #pigeon {
   z-index: 99;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 10px;
   width: 70px;
@@ -76,4 +76,10 @@ h2 {
 .header {
   margin-bottom:50px;
   padding-left: 0px;
+}
+
+.infographic {
+  height: 10px;
+  background-color: #A1A1A1;
+  display: hidden;
 }
