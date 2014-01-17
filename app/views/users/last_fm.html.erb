@@ -1,6 +1,17 @@
   <div class="row main">
     <div id="section_facebook" class="col-md-4 list">
-
+      <% @fb_list.each do |name, handle| %>
+        <div class="row profile_container">
+          <div class="col-md-3 image_container">
+            <img class="profile_image" src="/profile_bigger.jpg"/>
+          </div>
+          <div class="col-md-9 info_container">
+            <h3 class="artist_name"><%= name %></h3>
+              <a href="https://twitter.com/<%= handle[0] %>" class="twitter-follow-button" data-show-count="false" data-size="large">No tweets found</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+        </div>
+      <% end %>
     </div>
     <div id="section_lastfm" class="col-md-4 list">
       <% @artist_list.each do |name, handle_rank| %>
