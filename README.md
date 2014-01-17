@@ -16,21 +16,7 @@ Sign into your music apps from Homing Pigeon to see the Twitter handles of the a
 
 
 ######Gems
-
-
-httparty
-json
-devise
-omniauth-facebook
-
-
-
-###Code Snippet
-This is a key method for the app:
-
-```
-def fubar_the_function(person)
-	return person+person
-end
-```
-
+- httparty
+- json
+- devise
+- omniauth-facebook
